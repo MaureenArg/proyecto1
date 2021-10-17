@@ -1,0 +1,73 @@
+---
+title: "Denuncias ambientales"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library (DT)
+library (dplyr)
+library (terra)
+library (raster)
+library (leaflet)
+library (sf)
+library (ggplot2)
+library (plotly)
+```
+
+```{r}
+provincias <-
+  st_read(
+    "https://github.com/tpb728O-programaciongeoespacialr/2021ii/raw/main/datos/ign/delimitacion-territorial-administrativa/provincias.geojson",
+    quiet = TRUE
+  )
+```
+
+```{r}
+denuncias <-
+    st_read(
+      "https://raw.githubusercontent.com/MaureenArg/datostarea/master/denuncias3.geojson",
+      quiet = TRUE
+    )
+```
+
+```{r}
+st_crs (denuncias) <- 4326
+```
+
+```{r}
+provincias <-
+  provincias %<%
+  st_transform(4326)
+```
+
+```{r}
+nacientes <-
+  st_read(
+    "https://raw.githubusercontent.com/MaureenArg/datostarea/master/nacientes.geojson",
+    quiet = TRUE
+  )
+```
+
+```{r}
+denuncias <-
+  st_read(
+    "/vsicurl/ "https://raw.githubusercontent.com/MaureenArg/datostarea/master/denuncias3.geojson",
+    options = c(
+      "X_POSSIBLE_NAMES=decimalLongitude",
+      "Y_POSSIBLE_NAMES=decimalLatitude"
+    ),
+    quiet = TRUE
+  )
+```
+
+```{r}
+altitud <-
+  rast(
+    "/vsicurl/https://raw.githubusercontent.com/tpb728O-programaciongeoespacialr/2021ii/master/datos/worldclim/altitud.tif"
+  )
+```
+
