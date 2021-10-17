@@ -79,3 +79,27 @@ altitud <-
   )
 ```
 
+
+```{r}
+denu_depu <-
+  st_read(
+    "/vsicurl/https://raw.githubusercontent.com/MaureenArg/datostarea/master/denu_depu.csv",
+    options = c(
+      "X_POSSIBLE_NAMES=decimalLongitude",
+      "Y_POSSIBLE_NAMES=decimalLatitude"
+    ),
+    quiet = TRUE
+  )
+```
+
+```{r}
+st_crs (denu_depu) <- 4326
+```
+
+```{r}
+denu_depu %>%
+  st_drop_geometry()%>%
+  select (TIPO_den, año, TIPO_inf, CATEGORIA_) %>%
+datatable ()
+```
+
