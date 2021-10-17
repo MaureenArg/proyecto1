@@ -169,67 +169,13 @@ pre code {
 
 
 <pre class="r"><code>library (DT)
-library (dplyr)</code></pre>
-<pre><code>## 
-## Attaching package: &#39;dplyr&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     filter, lag</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     intersect, setdiff, setequal, union</code></pre>
-<pre class="r"><code>library (terra)</code></pre>
-<pre><code>## terra version 1.4.7</code></pre>
-<pre><code>## 
-## Attaching package: &#39;terra&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
-## 
-##     src</code></pre>
-<pre class="r"><code>library (raster)</code></pre>
-<pre><code>## Loading required package: sp</code></pre>
-<pre><code>## 
-## Attaching package: &#39;sp&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:terra&#39;:
-## 
-##     bbox, disaggregate</code></pre>
-<pre><code>## 
-## Attaching package: &#39;raster&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:terra&#39;:
-## 
-##     adjacent, animate, area, boundaries, buffer, cellFromRowCol,
-##     cellFromRowColCombine, cellFromXY, clamp, click, colFromCell,
-##     colFromX, cover, crop, crosstab, crs, crs&lt;-, distance, erase,
-##     extend, extract, flip, focal, freq, geom, hasValues, init,
-##     inMemory, interpolate, mask, modal, mosaic, ncell, ncol&lt;-, nrow&lt;-,
-##     origin, origin&lt;-, plotRGB, rasterize, readStart, readStop, rectify,
-##     res, res&lt;-, resample, RGB, rotate, rowColFromCell, rowFromCell,
-##     rowFromY, setMinMax, setValues, shift, stretch, symdif, terrain,
-##     trim, values, values&lt;-, writeRaster, writeStart, writeStop,
-##     writeValues, xFromCell, xFromCol, xmax, xmax&lt;-, xmin, xmin&lt;-, xres,
-##     xyFromCell, yFromCell, yFromRow, ymax, ymax&lt;-, ymin, ymin&lt;-, yres,
-##     zonal, zoom</code></pre>
-<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
-## 
-##     select</code></pre>
-<pre class="r"><code>library (leaflet)
-library (sf)</code></pre>
-<pre><code>## Linking to GEOS 3.9.1, GDAL 3.2.1, PROJ 7.2.1</code></pre>
-<pre class="r"><code>library (ggplot2)
+library (dplyr)
+library (terra)
+library (raster)
+library (leaflet)
+library (sf)
+library (ggplot2)
 library (plotly)</code></pre>
-<pre><code>## 
-## Attaching package: &#39;plotly&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:ggplot2&#39;:
-## 
-##     last_plot</code></pre>
-<pre><code>## The following object is masked from &#39;package:raster&#39;:
-## 
-##     select</code></pre>
-<pre><code>## The following object is masked from &#39;package:stats&#39;:
-## 
-##     filter</code></pre>
-<pre><code>## The following object is masked from &#39;package:graphics&#39;:
-## 
-##     layout</code></pre>
 <pre class="r"><code>provincias &lt;-
   st_read(
     &quot;https://github.com/tpb728O-programaciongeoespacialr/2021ii/raw/main/datos/ign/delimitacion-territorial-administrativa/provincias.geojson&quot;,

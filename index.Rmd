@@ -7,7 +7,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r}
+```{r paquetes, warning=FALSE, message=FALSE}
 library (DT)
 library (dplyr)
 library (terra)
@@ -18,7 +18,7 @@ library (ggplot2)
 library (plotly)
 ```
 
-```{r}
+```{r datos, warning=FALSE, message=FALSE}
 provincias <-
   st_read(
     "https://github.com/tpb728O-programaciongeoespacialr/2021ii/raw/main/datos/ign/delimitacion-territorial-administrativa/provincias.geojson",
