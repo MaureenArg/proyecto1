@@ -26,21 +26,25 @@ provincias <-
   )
 ```
 
+
 ```{r}
 denuncias <-
-    st_read(
-      "https://raw.githubusercontent.com/MaureenArg/datostarea/master/denuncias3.geojson",
-      quiet = TRUE
-    )
+  st_read(
+    "/vsicurl/https://raw.githubusercontent.com/MaureenArg/datostarea/master/denuncias.csv",
+    options = c(
+      "X_POSSIBLE_NAMES=decimalLongitude",
+      "Y_POSSIBLE_NAMES=decimalLatitude"
+    ),
+    quiet = TRUE
+  )
 ```
-
 ```{r}
 st_crs (denuncias) <- 4326
 ```
 
 ```{r}
 provincias <-
-  provincias %<%
+  provincias %>%
   st_transform(4326)
 ```
 
@@ -53,13 +57,17 @@ nacientes <-
 ```
 
 ```{r}
-denuncias <-
+cuencas <-
   st_read(
-    "/vsicurl/ "https://raw.githubusercontent.com/MaureenArg/datostarea/master/denuncias3.geojson",
-    options = c(
-      "X_POSSIBLE_NAMES=decimalLongitude",
-      "Y_POSSIBLE_NAMES=decimalLatitude"
-    ),
+    "https://raw.githubusercontent.com/MaureenArg/datostarea/master/cuencas.geojson",
+    quiet = TRUE
+  )
+```
+
+```{r}
+rios <-
+  st_read(
+    "https://raw.githubusercontent.com/MaureenArg/datostarea/master/rios.geojson",
     quiet = TRUE
   )
 ```
