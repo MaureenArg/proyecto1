@@ -100,6 +100,10 @@ st_crs (denu_depu) <- 4326
 denu_depu %>%
   st_drop_geometry()%>%
   select (TIPO_den, año, TIPO_inf, CATEGORIA_) %>%
-datatable ()
+    datatable (rownames= FALSE, filter= "top", class= "hover cell-border stripe", caption= "Tabla 1: Tipo de denuncias ambientales según año")
 ```
+
+
+
+
 
